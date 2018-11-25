@@ -34,6 +34,8 @@ class CreateTableEmpresa extends Migration
             $table->foreign('comunas_id')->references('id')->on('comunas')->onDelete('cascade');
             $table->unsignedInteger('tipo_empresas_id')->unsigned();
             $table->foreign('tipo_empresas_id')->references('id')->on('tipo_empresas')->onDelete('cascade');
+            $table->integer('status_id')->unsigned();
+            $table->foreign('status_id')->references('id')->on('status')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
